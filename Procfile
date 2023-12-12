@@ -1,2 +1,2 @@
-web: daphne Configs.asgi:application --port $PORT --bind 0.0.0.0 -v2
+web: daphne --port $PORT Configs.asgi:application -v2
 worker: python3 manage.py runworker channel_layer -v2
