@@ -1,2 +1,2 @@
-web: daphne -u /tmp/daphne.sock Configs.asgi:application -v2
-chatworker: python manage.py runworker channels --settings=Configs.settings -v2
+web: daphne Configs.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
+worker: python manage.py runworker -v2
